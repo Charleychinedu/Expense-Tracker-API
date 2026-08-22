@@ -7,5 +7,5 @@ app.listen(PORT, "0.0.0.0", () => {
 });
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "Expense Tracker API is running" });
+  res.send('API is running');
 });
