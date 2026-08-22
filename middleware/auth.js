@@ -5,7 +5,7 @@ const config = require("../config/config")
 
 const validateToken = async (req, res, next) => {
     try {
-        if (!req.headers.authorization) {
+        if (!req.headers) {
             return res.status(401).json({ message: "Authorization header is required" })
         }
         const token = req.headers.authorization.split(" ")[1]

@@ -172,12 +172,12 @@ const updateExpenseHandler = async (req, res) => {
         }
 
         const category = await Category.findByPk(categoryId)
-        if (!categoryId) {
-            return res.status(404).json({ message: "category not found" })
+        if (!category) {
+            return res.status(404).json({ message: "Category not found" })
         }
         const expenses = await Expense.findByPk(id)
         if (!expenses) {
-            return res.status(404).json({ message: "expenses not found" })
+            return res.status(404).json({ message: "Expenses not found" })
         }
 
         // The updating
@@ -309,7 +309,6 @@ const downloadExpenseSummaryHandler = async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 }
-
 
 
 
